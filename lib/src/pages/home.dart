@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/src/cart_screen.dart';
-import 'package:food_app/src/home_screen.dart';
-import 'package:food_app/src/my_account_screen.dart';
-import 'package:food_app/src/search_screen.dart';
+
+import 'cart_screen.dart';
+import 'home_screen.dart';
+import 'my_account_screen.dart';
+import 'search_screen.dart';
+
 
 class Home extends StatefulWidget {
 
@@ -59,12 +61,13 @@ class _HomeState extends State<Home> {
         selectedItemColor: Colors.red,
         selectedFontSize: 0,
         unselectedFontSize: 0,
-        iconSize: 22,
+        iconSize: 30,
         elevation: 0,
         backgroundColor: Colors.transparent,
-        selectedIconTheme: IconThemeData(size: 28),
-        unselectedItemColor: Theme.of(context).focusColor.withOpacity(1),
+        selectedIconTheme: IconThemeData(size: 30),
+        //unselectedItemColor:
         currentIndex: 0,
+        selectedLabelStyle: TextStyle(color: Colors.red),
         onTap: (int i) {
           print(i);
           this._selectTab(i);
@@ -73,19 +76,19 @@ class _HomeState extends State<Home> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            title: Text('Home')
+            label: 'Home',
           ),
           BottomNavigationBarItem(
-              title: Text('Search'),
-              icon:   Icon(Icons.search),
+            label: 'Search',
+              icon: Icon(Icons.search),
           ),
           BottomNavigationBarItem(
-            icon:  Icon(Icons.shopping_cart),
-            title: Text('Cart'),
+            icon: Icon(Icons.shopping_cart),
+            label: 'Cart',
           ),
           BottomNavigationBarItem(
             icon:  Icon(Icons.person),
-            title: Text('Account'),
+            label: 'Account',
           ),
         ],
       ),
